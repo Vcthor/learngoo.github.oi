@@ -1,0 +1,700 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: rgb(255, 255, 255);
+  margin: 0; /* Remove default body margin */
+  padding: 0; /* Remove default body padding */
+  
+}
+
+.navbar {
+  background-color: #32377c;
+  color: #fff;
+  padding: 10px 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+}
+
+
+
+.navbar.hidden {
+  top: -60px;
+}
+/* Hamburger Menu Styles */
+.menu-toggle {
+  position: relative;
+  margin-left: 10px; /* Adjust as needed */
+}
+.toggle-btn {
+  cursor: pointer;
+  display: block;
+  height: 30px;
+  position: relative;
+  width: 30px;
+}
+
+.toggle-btn span {
+  background: #fff; /* Adjust the color of the hamburger icon */
+  display: block;
+  height: 2px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: 0.3s;
+  width: 100%;
+}
+
+.toggle-btn span:before,
+.toggle-btn span:after {
+  background: #fff; /* Adjust the color of the hamburger icon */
+  content: '';
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: 0.3s;
+  width: 100%;
+}
+
+.toggle-btn span:before {
+  top: -8px;
+}
+
+.toggle-btn span:after {
+  bottom: -8px;
+}
+
+.menu {
+  background: #32377c;
+  border-radius: 10px; /* Add rounded corners to the menu */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  list-style: none;
+  margin: 0;
+  max-height: 0;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  right: 20px;
+  top: 100%;
+  transition: max-height 0.3s ease-out;
+  width: 120px;
+  z-index: 1000;
+  left: 20px; /* Position the menu to the left of the hamburger button */
+  right: auto; /* Reset the right property */
+  border-radius: 15px; /* Add border-radius to make the menu options rounded */
+  border: 0.5px solid #000; /* Add border to the menu options */
+}
+
+.menu li {
+  border-bottom: 1px solid #eee;
+}
+
+.menu li:last-child {
+  border-bottom: none;
+}
+
+.menu a {
+  color: #fff;
+  display: block;
+  padding: 10px 15px;
+  text-decoration: none;
+}
+
+.menu a:hover {
+  background-color: #666fef;
+}
+.menu-toggle .menu {
+  max-height: 0;
+  opacity: 0;
+  transition: max-height 0.3s ease-out, opacity 0.3s ease; /* Add opacity transition */
+}
+.menu-toggle:hover .menu {
+  max-height: 300px; /* Show the menu when hovering over the toggle button */
+  opacity: 1; /* Set opacity to 1 when hovering */
+}
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 5px;
+  margin-right: 60px;
+  padding: 10px;
+}
+
+
+
+.title {
+  margin-left: auto; /* Push the title to the right side */
+  margin-right: 20px; /* Add some margin to separate it from other elements */
+margin-right: 30px;
+  padding: 10px; /* Add padding for better appearance */
+font-size: 20px;
+  font-weight: bold;
+}
+
+
+
+.image-container {
+  position: relative;
+  margin-top: 60px; /* Adjust as needed to create space between navbar and image */
+}
+
+.image-container img {
+  display: block;
+  width: 100%;
+  height: auto; /* Ensure the image retains its aspect ratio */
+}
+
+.content {
+  margin-top: 60px;
+  padding: 10px;
+}
+
+.learningmats {
+  margin-top: 20px;
+}
+
+.vods {
+  margin-top: 20px;
+}
+.vods2 {
+  margin-top: 10px;
+}
+
+.quiz {
+  margin-top: 20px;
+}
+
+
+
+.mySlides {
+  display: none;
+  
+}
+
+img {
+  vertical-align: middle;
+}
+
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+ 
+}
+
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  z-index: 100;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active,
+.dot:hover {
+  background-color: #717171;
+}
+
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@media only screen and (max-width: 300px) {
+  .prev,
+  .next,
+  .text {
+    font-size: 11px;
+  }
+}
+
+/* New styles for the boxes */
+.container1 {
+  margin: 20px auto;
+  width: 400px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-rows: 1fr; /* Ensure each row takes equal space */
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center
+}
+.boxbox_2{
+  margin: 20px auto;
+  width: 400px;
+}
+
+
+.box {
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  border: 2px solid #00f;
+  overflow: hidden;
+  position: relative; /* Ensure the box acts as the relative position container */
+  width: 300px;
+  height: 300px;
+}
+
+.box-title {
+  font-size: 16px;
+  font-weight: bold;
+  padding: 10px;
+  position: absolute; /* Position the title absolutely within the box */
+  top: 0; /* Align the title to the top of the box */
+  left: 0; /* Align the title to the left of the box */
+  width: 100%; /* Ensure the title spans the entire width of the box */
+  text-align: center; /* Center the title horizontally */
+  background-color: rgba(0, 0, 0, 0.608); /* Semi-transparent background */
+  color: #fff;
+  border-radius: 10px 10px 0 0; /* Round the top corners of the title */
+}
+.box-content img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* Scale the image to fit inside the box while preserving its aspect ratio */
+}
+
+
+
+
+
+
+
+
+/* Style for individual boxes */
+.vods .box1, .vods .box2, .vods .box3, .vods .box4, .vods .box5,
+.vods .box6, .vods .box7, .vods .box8, .vods .box9, .vods .box10 {
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  overflow: hidden;
+  flex-shrink: 0; /* Prevent items from shrinking */
+  width: 200px; /* Set the width of each VOD box */
+  height: 200px; /* Set the height of each VOD box */
+  margin-right: 10px; /* Add some spacing between boxes */
+}
+
+/* Scroll container styles */
+.vods .vods-scroll-container {
+  overflow-x: auto; /* Enable horizontal scrolling */
+  white-space: nowrap; /* Prevent wrapping of items */
+  margin-top: 20px; /* Add some top margin */
+}
+
+.vods .container2 {
+  display: flex; /* Use flexbox layout */
+  gap: 20px; /* Add space between items */
+  overflow-x: auto; /* Enable horizontal scrolling */
+  white-space: nowrap; /* Ensure the items stay in a single row */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.vods .container2::-webkit-scrollbar {
+  display: none; /* Hide scrollbar in Webkit browsers */
+}
+.vods .vods-scroll-container {
+  overflow-x: auto; /* Enable horizontal scrolling */
+  white-space: nowrap; /* Prevent wrapping of items */
+  margin-top: 20px; /* Add some top margin */
+}
+
+.vods .container2 {
+  display: inline-flex; /* Use inline-flex layout to prevent wrapping */
+  flex-direction: row; /* Arrange child elements horizontally */
+}
+
+.vods2 .box1, .vods2 .box2, .vods2 .box3, .vods2 .box4, .vods2 .box5,
+.vods2 .box6, .vods2 .box7, .vods2 .box8, .vods2 .box9, .vods2 .box10,
+.vods2 .box11, .vods2 .box12, .vod2s .box13, .vods2 .box14, .vods2 .box15,
+.vods2 .box16, .vods2 .box17, .vods2 .box18, .vods2 .box19, .vods2 .box20, .vods2 .box21
+
+ {
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  overflow: hidden;
+  flex-shrink: 0; /* Prevent items from shrinking */
+  width: 200px; /* Set the width of each VOD box */
+  height: 200px; /* Set the height of each VOD box */
+  margin-right: 10px; /* Add some spacing between boxes */
+}
+
+
+
+/* Scroll container styles */
+.vods2 .vods2-scroll-container {
+  overflow-x: auto; /* Enable horizontal scrolling */
+  white-space: nowrap; /* Prevent wrapping of items */
+  margin-top: 20px; /* Add some top margin */
+}
+
+.vods2 .container2 {
+  display: flex; /* Use flexbox layout */
+  gap: 20px; /* Add space between items */
+  overflow-x: auto; /* Enable horizontal scrolling */
+  white-space: nowrap; /* Ensure the items stay in a single row */
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.vods2 .container2::-webkit-scrollbar {
+  display: none; /* Hide scrollbar in Webkit browsers */
+}
+.vods2 .vods2-scroll-container {
+  overflow-x: auto; /* Enable horizontal scrolling */
+  white-space: nowrap; /* Prevent wrapping of items */
+  margin-top: 20px; /* Add some top margin */
+}
+
+.vods2 .container2 {
+  display: inline-flex; /* Use inline-flex layout to prevent wrapping */
+  flex-direction: row; /* Arrange child elements horizontally */
+}
+
+
+/* Add this to your existing CSS file */
+.footer {
+  background-color: #32377c;
+  color: #fff;
+  padding: 1px;
+  text-align: center;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.contact-links a {
+  color: #fff;
+  margin-right: 10px;
+  text-decoration: none;
+}
+
+.contact-hamburger a {
+  color: #fff;
+  text-decoration: none;
+}
+.wrapper .icon{
+  position: relative;
+  background-color: #ffffff;
+  border-radius: 50%;
+  margin: 10px;
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  font-size: 22px;
+  display: inline-block;
+  align-items: center;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  color: #333;
+  text-decoration: none;
+}
+.wrapper .tooltip {
+  position: absolute;
+  top: 0;
+  line-height: 1.5;
+  font-size: 14px;
+  background-color: #ffffff;
+  color: #ffffff;
+  padding: 5px 8px;
+  border-radius: 5px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.wrapper .tooltip::before {
+  position: absolute;
+  content: "";
+  height: 8px;
+  width: 8px;
+  background-color: #ffffff;
+  bottom: -3px;
+  left: 50%;
+  transform: translate(-50%) rotate(45deg);
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.wrapper .icon:hover .tooltip {
+  top: -45px;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+.wrapper .icon:hover span,
+.wrapper .icon:hover .tooltip {
+  text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
+}
+.wrapper .facebook:hover,
+.wrapper .facebook:hover .tooltip,
+.wrapper .facebook:hover .tooltip::before {
+  background-color: #3b5999;
+  color: #ffffff;
+}
+.wrapper .twitter:hover,
+.wrapper .twitter:hover .tooltip,
+.wrapper .twitter:hover .tooltip::before {
+  background-color: #46c1f6;
+  color: #ffffff;
+}
+.wrapper .instagram:hover,
+.wrapper .instagram:hover .tooltip,
+.wrapper .instagram:hover .tooltip::before {
+  background-color: #e1306c;
+  color: #ffffff;
+}
+hr.shadowed {
+  box-shadow: 0 5px 5px -5px rgba(0, 0, 0, 0.5); /* Adjust the shadow properties */
+}
+
+.menu-toggle {
+  position: relative;
+  margin-right: 10px; /* Adjust as needed to position the button on the right side */
+}
+.box_2 {
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  border: 2px solid #00f;
+  overflow: hidden;
+  position: relative;
+  width: 300px;
+  height: 300px;
+}
+
+.box_2 .box-title {
+  font-size: 16px;
+  font-weight: bold;
+  padding: 10px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.608);
+  color: #fff;
+  border-radius: 10px 10px 0 0;
+}
+
+.box_2 .box-content img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Initially hide box_2 elements */
+.box_2 {
+  display: none;
+}
+.box-label {
+  text-align: justify;
+  white-space: nowrap; /* Change from 'normal' to 'nowrap' */
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.button-9 {
+  appearance: button;
+  backface-visibility: hidden;
+  background-color: #405cf5;
+  border-radius: 6px;
+  border-width: 0;
+  box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset,rgba(50, 50, 93, .1) 0 2px 5px 0,rgba(0, 0, 0, .07) 0 1px 1px 0;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  font-family: -apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Ubuntu,sans-serif;
+  font-size: 100%;
+  height: 44px;
+  line-height: 1.15;
+  margin: 12px 0 0;
+  outline: none;
+  overflow: hidden;
+  padding: 0 25px;
+  position: relative;
+  text-align: center;
+  text-transform: none;
+  transform: translateZ(0);
+  transition: all .2s,box-shadow .08s ease-in;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: 100px;
+}
+
+.button-9:disabled {
+  cursor: default;
+}
+
+.button-9:focus {
+  box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset, rgba(50, 50, 93, .2) 0 6px 15px 0, rgba(0, 0, 0, .1) 0 2px 2px 0, rgba(50, 151, 211, .3) 0 0 0 4px;
+}
+.button-9:hover{
+  background-color: #16437E;
+  color: #ffffff;
+}
+.button-99 {
+  appearance: button;
+  backface-visibility: hidden;
+  background-color: #405cf5;
+  border-radius: 6px;
+  border-width: 0;
+  box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset,rgba(50, 50, 93, .1) 0 2px 5px 0,rgba(0, 0, 0, .07) 0 1px 1px 0;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  font-family: -apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Ubuntu,sans-serif;
+  font-size: 100%;
+  height: 44px;
+  line-height: 1.15;
+  margin: 12px 0 0;
+  outline: none;
+  overflow: hidden;
+  padding: 0 25px;
+  position: relative;
+  text-align: center;
+  text-transform: none;
+  transform: translateZ(0);
+  transition: all .2s,box-shadow .08s ease-in;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: 200px;
+  
+}
+.button-99:hover{
+  background-color: #16437E;
+  color: #ffffff;
+}
+
+.button-99:disabled {
+  cursor: default;
+}
+
+.button-99:focus {
+  box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset, rgba(50, 50, 93, .2) 0 6px 15px 0, rgba(0, 0, 0, .1) 0 2px 2px 0, rgba(50, 151, 211, .3) 0 0 0 4px;
+}
+
+
+.pagebuttons {
+  appearance: button;
+  backface-visibility: hidden;
+  background-color: #405cf5;
+  border-radius: 60px;
+  border-width: 0;
+  box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset,rgba(50, 50, 93, .1) 0 2px 5px 0,rgba(0, 0, 0, .07) 0 1px 1px 0;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  font-family: -apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Ubuntu,sans-serif;
+  font-size: 100%;
+  height: 44px;
+  line-height: 1.15;
+  margin: 12px 0 0;
+  outline: none;
+  overflow: hidden;
+  padding: 0 25px;
+  position: relative;
+  text-align: center;
+  text-transform: none;
+  transform: translateZ(0);
+  transition: all .2s,box-shadow .08s ease-in;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: 200px;
+  justify-content: space-between;
+  position: center;
+  
+}
+.pagebuttons:hover{
+  background-color: #16437E;
+  color: #ffffff;
+}
+
+.pagebuttons:disabled {
+  cursor: default;
+}
+
+.pagebuttons:focus {
+  box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset, rgba(50, 50, 93, .2) 0 6px 15px 0, rgba(0, 0, 0, .1) 0 2px 2px 0, rgba(50, 151, 211, .3) 0 0 0 4px;
+}
+
+.containertop {
+  display: flex;
+  justify-content: center; /* Center the buttons horizontally */
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.pagebuttons {
+ 
+  margin:  10px; /* Add margin between buttons if needed */
+}
+
+
+
+
+
+
+
+
